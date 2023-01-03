@@ -1,19 +1,16 @@
 import { Fragment } from "react";
 import QuoteItem from "./QuoteItem";
 import classes from "./QuoteList.module.css";
-import { useHistory, useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 const QuoteList = (props) => {
-  const history = useHistory();
+  const navigate = useNavigate();
   const location = useLocation();
   const { quotes } = props;
   const queryParams = new URLSearchParams(location.search);
   const sortingOrder = queryParams.get("sort");
 
   const changeOrder = () => {
-    history.push({
-      pathname: location.pathname,
-      search: `?sort=${sortingOrder === "asc" ? "desc" : "asc"}`,
-    });
+    navigate(`?sort=${sortingOrder === "asc" ? "desc" : "asc"}`);
     if (sortingOrder === "asc") {
       quotes.sort((quoteX, quoteY) => (quoteX.id > quoteY.id ? 1 : -1));
     } else {

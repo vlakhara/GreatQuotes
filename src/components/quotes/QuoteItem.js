@@ -1,8 +1,7 @@
-import { NavLink, useRouteMatch } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import classes from "./QuoteItem.module.css";
 
 const QuoteItem = (props) => {
-  const match = useRouteMatch();
   return (
     <li className={classes.item}>
       <figure>
@@ -11,7 +10,7 @@ const QuoteItem = (props) => {
         </blockquote>
         <figcaption>{props.author}</figcaption>
       </figure>
-      <NavLink className="btn" to={`${match.path}/${props.id}`}>
+      <NavLink className="btn" to={props.id}>
         View Fullscreen
       </NavLink>
     </li>
