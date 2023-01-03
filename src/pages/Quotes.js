@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import QuoteList from "../components/quotes/QuoteList";
 import useHttp from "../components/hooks/use-http";
 import { getAllQuotes } from "../components/lib/api";

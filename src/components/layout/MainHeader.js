@@ -8,12 +8,22 @@ const MainHeader = () => {
       <div className={style.nav}>
         <ul>
           <li>
-            <NavLink activeClassName={style.active} to={"/quotes"}>
+            <NavLink
+              className={(data) => {
+                return data.isActive ? style.active : "";
+              }}
+              to={"/quotes"}
+            >
               Quotes
             </NavLink>
           </li>
           <li>
-            <NavLink activeClassName={style.active} to="/new-quote">
+            <NavLink
+              className={(data) => {
+                return data.isActive ? style.active : "";
+              }}
+              to="/new-quote"
+            >
               Add quote
             </NavLink>
           </li>
