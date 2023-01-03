@@ -12,11 +12,9 @@ const Quotes = () => {
     data: quotes,
     error,
   } = useHttp(getAllQuotes, true);
-
   useEffect(() => {
     sendRequest();
   }, [sendRequest]);
-
   if (status === "pending") {
     return (
       <div className="centered">

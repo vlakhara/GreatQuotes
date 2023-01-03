@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
-import { Link, Route, Routes, useParams } from "react-router-dom";
-import Comments from "../components/comments/Comments";
+import { Link, Outlet, useParams } from "react-router-dom";
 import HighlightedQuote from "../components/quotes/HighlightedQuote";
 import useHttp from "../components/hooks/use-http";
 import { getSingleQuote } from "../components/lib/api";
@@ -56,9 +55,7 @@ const Quote = () => {
           Comments
         </Link>
       </div>
-      <Routes>
-        <Route path={`comments`} element={<Comments />} />
-      </Routes>
+      <Outlet />
     </div>
   );
 };
